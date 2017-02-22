@@ -77,7 +77,17 @@ switch ($action){
         }
         break;
     case 'profile':
-        $smarty->display('profile.tpl');
+        if (isset($_POST['addComment']) && !empty($_POST['addComment'])){
+           $comment = htmlentities(trim($_POST['addComment']));
+           echo $comment;
+        } else {
+            $error = "<span style='margin-left: 45%; color: white' class='label label-danger'>Cannot be empty!</span>";
+        }
+            $query = 'SELECT users.username, article, date_created FROM articles LEFT JOIN users ON articles.user_id=users.id';
+            $res = $db->query($query);
+            $data = $res->fetch_all(MYSQLI_ASSOC);
+            $smarty->assign('array', $data);
+            $smarty->display('profile.tpl');
         break;
     case 'logout':
         User::userLogout();
