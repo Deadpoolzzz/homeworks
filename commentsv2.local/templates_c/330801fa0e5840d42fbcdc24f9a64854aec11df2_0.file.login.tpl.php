@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-02-16 14:02:14
+/* Smarty version 3.1.30, created on 2017-02-19 14:00:22
   from "/Users/antonbelykh/code/sandbox/www/commentsv2.local/views/login.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58a5a2d6c8e5f5_32867890',
+  'unifunc' => 'content_58a996e63f0fa9_80116744',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '330801fa0e5840d42fbcdc24f9a64854aec11df2' => 
     array (
       0 => '/Users/antonbelykh/code/sandbox/www/commentsv2.local/views/login.tpl',
-      1 => 1487250132,
+      1 => 1487509217,
       2 => 'file',
     ),
   ),
@@ -21,33 +21,35 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:layout.tpl' => 1,
   ),
 ),false)) {
-function content_58a5a2d6c8e5f5_32867890 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58a996e63f0fa9_80116744 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_121342540558a5a2d6c8a3b2_00328974', "title");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_180488682758a996e63d0fd5_51573538', "title");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_72983894458a5a2d6c8baa5_13048907', "css");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14746744358a996e63d2800_83830729', "css");
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_58296149758a5a2d6c8cd22_68247665', "h1");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_34825573558a996e63d3a88_21533528', "h1");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_147292010758a5a2d6c8df98_41149226', "body");
-$_smarty_tpl->inheritance->endChild();
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_66818614458a996e63f0206_55698646', "body");
+?>
+
+<?php $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:layout.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block "title"} */
-class Block_121342540558a5a2d6c8a3b2_00328974 extends Smarty_Internal_Block
+class Block_180488682758a996e63d0fd5_51573538 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -56,7 +58,7 @@ Login page<?php
 }
 /* {/block "title"} */
 /* {block "css"} */
-class Block_72983894458a5a2d6c8baa5_13048907 extends Smarty_Internal_Block
+class Block_14746744358a996e63d2800_83830729 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -65,7 +67,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "css"} */
 /* {block "h1"} */
-class Block_58296149758a5a2d6c8cd22_68247665 extends Smarty_Internal_Block
+class Block_34825573558a996e63d3a88_21533528 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -74,7 +76,7 @@ Login page<?php
 }
 /* {/block "h1"} */
 /* {block "body"} */
-class Block_147292010758a5a2d6c8df98_41149226 extends Smarty_Internal_Block
+class Block_66818614458a996e63f0206_55698646 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -107,12 +109,50 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                     <div class="form-group ">
                         <button type="submit" id="button" form="login" class="btn btn-primary btn-lg btn-block login-button">Login</button>
                     </div>
-
                 </form>
                 <a href="index.php?action=register">Register</a>
             </div>
         </div>
     </div>
+    
+        
+            
+                
+                    
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                            
+                                
+                                
+                                
+                            
+                        
+                        
+                    
+            
+        
+    
+    
+        
+            
+            
+            
+        
+        
+        
+            
+                
+                
+                
+            
+        
+        
+    
 <?php
 }
 }

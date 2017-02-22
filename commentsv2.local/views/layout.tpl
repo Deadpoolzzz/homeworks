@@ -14,8 +14,6 @@
 </head>
 <body>
     <h1 class="title">{block name="h1"}{/block}</h1>
-    {block name="body"}
-
-    {/block}
+    {block name="body"}{/block}
 </body>
 </html>

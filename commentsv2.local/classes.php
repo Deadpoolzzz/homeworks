@@ -24,9 +24,10 @@ class User{
     public function setPass($pass) {
         $this->pass = $pass;
     }
-    public function userRegister($email, $new_pass){
+    public function userRegister($email, $pass){
+        $pass = password_hash($pass, PASSWORD_DEFAULT);
         $conn = DB::getConnection();
-        $conn->query("INSERT INTO `users`(`username`, `password`, `is_admin`) VALUES ('$email', '$new_pass', 0)");
+        $conn->query("INSERT INTO `users`(`username`, `password`, `is_admin`) VALUES ('$email', '$pass', 0)");
         $conn->affected_rows;
         if ($conn->affected_rows === 1){
             return true;
@@ -36,10 +37,14 @@ class User{
     }
     public static function userLogin($email, $pass){
         $conn = DB::getConnection();
-        $conn->query('SELECT * FROM `users` WHERE `username` = "'.$email.'" AND `password` = "'.$pass.'" LIMIT 1');
-        $conn->affected_rows;
-        if ($conn->affected_rows == 1){
-            return true;
+        $query = ('SELECT * FROM `users` WHERE `username` = "'.$email.'" LIMIT 1');
+        $res = $conn->query($query);
+        $userData = $res->fetch_row();
+        if (password_verify($pass, $userData[2])){
+            $conn->affected_rows;
+            if ($conn->affected_rows == 1){
+                return true;
+            }
         }
         return false;
     }
@@ -49,3 +54,4 @@ class User{
         header('Location: index.php');
     }
 }
+

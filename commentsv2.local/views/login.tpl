@@ -34,10 +34,48 @@
                     <div class="form-group ">
                         <button type="submit" id="button" form="login" class="btn btn-primary btn-lg btn-block login-button">Login</button>
                     </div>
-
                 </form>
                 <a href="index.php?action=register">Register</a>
             </div>
         </div>
     </div>
+    {*<div class="col-md-6 col-md-offset-3">*}
+        {*<div class="panel panel-default panel-table">*}
+            {*<div class="panel-heading">*}
+                {*<span class="row">*}
+                    {*<table class="table table-hover">*}
+                        {*<thead>*}
+                        {*<th class="info"><span class="label label-info">Username</span></th>*}
+                        {*<th class="info"><span class="label label-info">Comment</span></th>*}
+                        {*<th class="info"><span class="label label-info">Date</span></th>*}
+                        {*</thead>*}
+                        {*<tbody>*}
+                        {*{foreach $array as $key}*}
+                            {*<tr>*}
+                                {*<td class="info">{$key['username']}</td>*}
+                                {*<td class="info">{$key['article']}</td>*}
+                                {*<td class="info">{$key['date_created']}</td>*}
+                            {*</tr>*}
+                        {*{/foreach}*}
+                        {*</tbody>*}
+                    {*</table>*}
+            {*</div>*}
+        {*</div>*}
+    {*</div>*}
+    {*<table border="1">*}
+        {*<thead>*}
+            {*<th>Usesrname</th>*}
+            {*<th>Comment</th>*}
+            {*<th>Date</th>*}
+        {*</thead>*}
+        {*<tbody>*}
+        {*{foreach $array as $key}*}
+            {*<tr>*}
+                {*<td>{$key['username']}</td>*}
+                {*<td>{$key['article']}</td>*}
+                {*<td>{$key['date_created']}</td>*}
+            {*</tr>*}
+        {*{/foreach}*}
+        {*</tbody>*}
+    {*</table>*}
 {/block}

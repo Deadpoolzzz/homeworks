@@ -9,11 +9,14 @@ $action = !empty($_REQUEST['action']) ? $_REQUEST['action'] : "login";
 
 switch ($action){
     case 'login':
-        $smarty->display('login.tpl');
         if (isset($_SESSION['name'])){
             header('location: index.php?action=profile');
         } else {
-
+//            $query = 'SELECT users.username, article, date_created FROM articles LEFT JOIN users ON articles.user_id=users.id';
+//            $res = $db->query($query);
+//            $data = $res->fetch_all(MYSQLI_ASSOC);
+//            $smarty->assign('array', $data);
+            $smarty->display('login.tpl');
             if (isset($_POST['email']) && isset($_POST['pass'])) {
                 if (empty($_POST['email']) || empty($_POST['pass'])) {
                     die("<span style='margin-left: 44%; color: white' class='label label-danger'> Please enter correct data</span>");
@@ -25,7 +28,7 @@ switch ($action){
                 }
                 if (User::userLogin($email, $pass)){
                     $_SESSION['name'] = $email;
-                    header('location: index.php?action=profile');
+                    header('location: index.php?action=profile&&username=' . $_SESSION['name']);
                 }
                 die("<span style='margin-left: 42%; color: white' class='label label-danger'>Invalid email or password. Try again!</span>");
             }
@@ -48,9 +51,8 @@ switch ($action){
                 if (strlen($pass) < 6 ){
                     die("<span style='margin-left: 41%; color: white' class='label label-danger'>Password must be more than 5 characters</span>");
                 }
-                $new_pass = password_hash($pass, PASSWORD_DEFAULT);
                 $user = new User();
-                $user->userRegister($email, $new_pass);
+                $user->userRegister($email, $pass);
                 $user->setEmail($email);
                 $user->setPass($pass);
                 $_SESSION['user'] = $user;
