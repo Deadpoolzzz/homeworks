@@ -37,6 +37,9 @@
                     </div>
                     <a href="index.php?action=login">Login</a>
                 </form>
+                {if isset($error)}
+                    <span style='margin-left: 44%; color: white' class='label label-danger'>{$error}</span>
+                {/if}
             </div>
         </div>
     </div>

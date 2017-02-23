@@ -5,11 +5,11 @@
 {block name="css"}<link rel="stylesheet" href="style.css">{/block}
 
 {block name="body"}
-    {if isset($smarty.session.name)}
+    {if isset($smarty.session.user)}
         <h1 class="title">Welcome to profile</h1>
     <div class="container">
         <div class="row main">
-            <span class="label label-warning">You're logged as: {$smarty.session.name}</span> <br>
+            <span class="label label-warning">You're logged as: {$smarty.session.user->getUserEmail()}</span> <br>
         <div class="container">
         <div class="row main">
             <div class="main-login main-center">
@@ -28,7 +28,7 @@
                         <button type="submit" id="button" form="comment" class="btn btn-primary btn-lg btn-block login-button">Add comment</button>
                     </div>
                     {if isset($error)}
-                        {$error}
+                        <span style='margin-left: 25%; color: white' class='label label-danger'>{$error}</span><br>
                     {/if}
 
             <a href='index.php?action=logout'>Logout</a>

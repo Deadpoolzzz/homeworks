@@ -40,7 +40,7 @@
                 <a href="index.php?action=register">Register</a>
             </div>
             {if isset($error)}
-                {$error}
+                <span style='margin-left: 44%; color: white' class='label label-danger'>{$error}</span>
             {/if}
         </div>
     </div>
