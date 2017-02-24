@@ -4,7 +4,11 @@ class User
     private $email;
     private $pass;
     private $is_admin;
+    private $id;
 
+    public function setId($id){
+        $this->id = $id;
+    }
     public function setEmail($email) {
         $this->email = $email;
     }
@@ -21,10 +25,13 @@ class User
     {
         return $this->email;
     }
+    public function getUserId(){
+        return $this->id;
+    }
 
     /**
      * @param $email
-     * @param $pass
+     * @param $originalPass
      * @return bool
      */
     public static function userRegister($email, $originalPass)
@@ -70,6 +77,7 @@ class User
         $user = new self();
         $user->setEmail($email);
         $user->setAdmin($foundUser["is_admin"]);
+        $user->setId($foundUser["id"]);
         Session::set("user",$user);
 
         return $user;

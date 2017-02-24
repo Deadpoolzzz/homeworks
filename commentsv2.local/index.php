@@ -4,6 +4,7 @@ require_once 'libs/Smarty.class.php';
 require_once 'classes/DB.php';
 require_once 'classes/Session.php';
 require_once 'classes/User.php';
+require_once 'classes/Comment.php';
 
 $smarty = new Smarty();
 $smarty->setTemplateDir('views');
@@ -64,7 +65,7 @@ switch ($action){
             if (empty($comment)){
                 $smarty->assign('error',"Could not be empty");
                 }
-                echo $comment; //TODO CREAT COMMENT CLASS
+                Comment::addComment($comment);
             }
 
             $data = User::getUsersArticle();

@@ -28,7 +28,11 @@
                         <button type="submit" id="button" form="comment" class="btn btn-primary btn-lg btn-block login-button">Add comment</button>
                     </div>
                     {if isset($error)}
-                        <span style='margin-left: 25%; color: white' class='label label-danger'>{$error}</span><br>
+                        <div style="text-align: center;">
+                        <span style="color: white;" class="label label-danger">
+                            {$error}
+                        </span>
+                        </div><br>
                     {/if}
 
             <a href='index.php?action=logout'>Logout</a>

@@ -34,7 +34,7 @@ class Session
     }
 
     /**
-     * Gets the value from the sessio
+     * Gets the value from the session
      * @param $key
      * @return null
      */
