@@ -37,11 +37,15 @@
                         <button type="submit" id="button" form="login" class="btn btn-primary btn-lg btn-block login-button">Login</button>
                     </div>
                 </form>
+                {if isset($error)}
+                    <div style="text-align: center;">
+                        <span style="color: white;" class="label label-danger">
+                            {$error}
+                        </span>
+                    </div><br>
+                {/if}
                 <a href="index.php?action=register">Register</a>
             </div>
-            {if isset($error)}
-                <span style='margin-left: 44%; color: white' class='label label-danger'>{$error}</span>
-            {/if}
         </div>
     </div>
 

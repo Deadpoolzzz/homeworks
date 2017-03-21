@@ -35,11 +35,15 @@
                     <div class="form-group ">
                         <button type="submit" id="button" form="register" class="btn btn-primary btn-lg btn-block login-button">Register</button>
                     </div>
-                    <a href="index.php?action=login">Login</a>
                 </form>
                 {if isset($error)}
-                    <span style='margin-left: 44%; color: white' class='label label-danger'>{$error}</span>
+                    <div style="text-align: center;">
+                        <span style="color: white;" class="label label-danger">
+                            {$error}
+                        </span>
+                    </div><br>
                 {/if}
+                <a href="index.php?action=login">Login</a>
             </div>
         </div>
     </div>
